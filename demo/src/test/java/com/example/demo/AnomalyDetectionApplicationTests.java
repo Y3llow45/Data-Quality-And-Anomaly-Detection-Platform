@@ -1,10 +1,10 @@
-package www.AnomalyDetection.backend;
+package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackendApplicationTests {
+class AnomalyDetectionApplicationTests {
 
 	@Test
 	void contextLoads() {

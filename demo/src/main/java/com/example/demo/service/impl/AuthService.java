@@ -6,7 +6,7 @@ import com.example.demo.dto.RegisterRequestDTO;
 import com.example.demo.dto.RegisterResponseDTO;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.domain.entity.User;
-import com.example.demo.security.jwtTokenProvider;
+import com.example.demo.security.JwtTokenProvider;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 public abstract class AuthService implements com.example.demo.service.AuthService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    private final jwtTokenProvider jwtTokenProvider;
+    private final JwtTokenProvider jwtTokenProvider;
 
     @Override
     @Transactional
@@ -39,7 +39,7 @@ public abstract class AuthService implements com.example.demo.service.AuthServic
         return new RegisterResponseDTO(LocalDateTime.now(), token);
     }
 
-     public LoginResponseDTO login(LoginRequestDTO request) {
+    public LoginResponseDTO login(LoginRequestDTO request) {
         if(userRepository.existsByUsernameOrEmail(request.usernameOrEmail())){
             User user = userRepository.findByUsername(request.usernameOrEmail())
                     .orElseThrow(() -> new RuntimeException("User not found"));

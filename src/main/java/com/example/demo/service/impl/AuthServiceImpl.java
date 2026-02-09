@@ -7,14 +7,17 @@ import com.example.demo.dto.RegisterResponseDTO;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.domain.entity.User;
 import com.example.demo.security.JwtTokenProvider;
+import com.example.demo.service.AuthService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+@Service
 @RequiredArgsConstructor
-public abstract class AuthService implements com.example.demo.service.AuthService {
+public class AuthServiceImpl implements AuthService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;

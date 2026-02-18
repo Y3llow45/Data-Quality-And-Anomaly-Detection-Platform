@@ -1,5 +1,6 @@
 package com.example.demo.domain.entity;
 
+import com.example.demo.domain.enums.Status;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,16 +20,18 @@ public class DatasetVersion {
     @JoinColumn(name = "dataset_id", nullable = false)
     private Dataset dataset;
 
-    @Column(nullable = false)
-    private String storagePath; // e.g. files/<datasetId>/<uuid>.csv
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "uploaded_by", nullable = false)
+    private User uploadedBy;
 
     @Column(nullable = false)
-    private long rowCount;
+    private String storagePath;
+
+    private Long rowCount;
 
     @Enumerated(EnumType.STRING)
-    private Status status; // PENDING, PROCESSING, DONE, FAILED
+    private Status status = Status.PENDING;
 
+    @Column(nullable = false, updatable = false)
     private Instant createdAt = Instant.now();
-
-    public enum Status { PENDING, PROCESSING, DONE, FAILED }
 }

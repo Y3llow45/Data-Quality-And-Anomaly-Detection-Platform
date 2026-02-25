@@ -1,0 +1,21 @@
+Name,Age,Salary,Department,Notes
+Alice,28,55000,HR,Good performer
+Bob,35,62000,Sales,
+Charlie,42,75000,Engineering,Needs training
+David,29,,Sales,Promoted recently
+Eve,31,48000,HR,
+Frank,45,90000,Engineering,High achiever
+Grace,27,52000,Sales,Maternity leave
+Henry,38,68000,HR,
+Ivy,33,59000,Engineering,Vacation pending
+Jack,40,81000,Sales,
+Kathy,26,47000,HR,New hire
+Leo,37,64000,Engineering,
+Mia,30,56000,Sales,Team lead
+Noah,44,95000,HR,Manager
+Olivia,32,61000,Engineering,
+Paul,39,72000,Sales,Resigned
+Quinn,25,45000,HR,
+Riley,36,67000,Engineering,Project delayed
+Sophia,41,83000,Sales,
+Tyler,34,999999,HR,Outlier salary test

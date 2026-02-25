@@ -49,7 +49,7 @@ public class DatasetService {
         version.setUploadedBy(owner);
         version.setStoragePath(destination.toString());
         version.setStatus(Status.PENDING);
-
+        version.setRowCount(0L);
         version = versionRepo.save(version);
 
         processAsync(version.getId());

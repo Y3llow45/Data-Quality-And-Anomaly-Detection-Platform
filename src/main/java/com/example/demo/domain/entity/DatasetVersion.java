@@ -27,7 +27,8 @@ public class DatasetVersion {
     @Column(nullable = false)
     private String storagePath;
 
-    private Long rowCount;
+    @Column(nullable = false)
+    private Long rowCount = 0L;
 
     @Enumerated(EnumType.STRING)
     private Status status = Status.PENDING;
